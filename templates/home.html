@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dismissal</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quattrocento&family=Quattrocento+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/static/favicon.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+    <script src="{{ url_for('static', filename='pronunciation.js') }}"></script>
+    <script src="{{ url_for('static', filename='dismissal.js') }}" defer></script>
+  </head>
+  <body>
+    <img class="HISlogo" src="https://his.edu.my/wp-content/uploads/2016/10/hislogo.png" alt="HIS Logo">
+    <img class="bottomright" src="{{url_for('static',filename='car.jpg')}}" alt="Car Icon">
+    
+    <div id="permission-container"></div>
+    
+    <div class="rectangle"></div>
+    <div class="rectangle2"></div>
+
+    <div class="content-wrapper">
+      <div class="left-section">
+        <div id="student-info">
+          <div class="student-name">
+            <h4><b>STUDENT NAME:</b> <span id="studentname"><br><div>{{studentname}}</div></span></h4>
+          </div>
+          <div class="lane-info">
+            <h4><b>LANE:</b> <span id="lane"><br><div>{{lane}}</div></span></h4>
+          </div>
+        </div>
+      </div>
+      <div class="rectangle3"></div>
+      <div class="right-section">
+        <div id="beta-notice">
+          <h4><b>THIS IS A BETA TEST:</b>
+            <span id="recent_list">
+              <br>
+              <div>
+                {{recent_list|safe}}
+              </div>
+            </span>
+          </h4>
+        </div>
+      </div>
+    </div>
+
+    <div id="connection-status" style="display: none;"></div>
+  </body>
+</html>
